@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../context/AuthContext'
+import { Navigate} from 'react-router-dom'
 
 const Feeds = () => {
-  return (
-    <div>Feeds</div>
-  )
+  // const navigate = useNavigate()
+  const {isAuth} = useContext(AuthContext)
+  if(isAuth){
+    return (
+      <div>Feeds</div>
+    )
+  }else{
+   return <Navigate to={"/login"}/>
+  }
+ 
 }
 
 export default Feeds
