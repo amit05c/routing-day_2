@@ -2,17 +2,19 @@ import React from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import {AuthContext} from "../context/AuthContext"
+import Login from '../pages/Login'
 
 const Navbar = () => {
-  const {isAuth,logout} =useContext(AuthContext)
+  const {isAuth,logout,login} =useContext(AuthContext)
   const navigate= useNavigate()
   const handleClick = ()=>{
     console.log(isAuth)
     if(isAuth){
       logout()
-      navigate("/")
+      // navigate("/")
     }else{
       navigate("/login")
+      
 
     }
   }

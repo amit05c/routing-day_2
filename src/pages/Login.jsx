@@ -1,12 +1,12 @@
 import React, { useState,useEffect,useContext } from 'react'
  import {AuthContext} from "../context/AuthContext"
- import { useNavigate } from 'react-router-dom'
+//  import { useNavigate } from 'react-router-dom'
 
 
 const Login = () => {
   const [loginCreds,setlogin]=useState({})
   const {login} = useContext(AuthContext)
-  const navigate= useNavigate()
+ 
   const handleChange = (e)=>{
               // console.log(e.target.value)
               const {name,value} = e.target;
@@ -22,7 +22,7 @@ const Login = () => {
     // TODO
     e.preventDefault()
     login()
-    navigate('/feeds')
+    
     
     // console.log(form)
 
