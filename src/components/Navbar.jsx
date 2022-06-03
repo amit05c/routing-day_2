@@ -21,7 +21,11 @@ const Navbar = () => {
   return (
     <div style={{display:"flex", gap: "20px",justifyContent:"center", margin:"auto"}}>
      <Link to={"/"}>Home</Link>
-     <Link to={"/feeds"}>Feeds</Link>
+
+     {/* link can be hide by this. but problem is user can go to page by typing the url */}
+     {isAuth && <Link to={"/feeds"}>Feeds</Link>}
+
+     
      <button onClick={handleClick} >{isAuth? "Logout" : "Login"}</button>
 
     </div>
